@@ -27,6 +27,12 @@ contract Token {
     // set balance
     function setBalance(uint amount) public isOwner {
         balances[minter] += amount;
+        emit BalanceSet(minter, amount);
+    }
+
+    // get balance
+    function getBalance(address wallet) public view returns (uint) {
+        return balances[wallet];
     }
 
     // generate custom error
