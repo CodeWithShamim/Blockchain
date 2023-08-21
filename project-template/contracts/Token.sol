@@ -8,6 +8,7 @@ contract Token {
 
     constructor() {
         minter = msg.sender;
+        balances[msg.sender] = 100;
     }
 
     // create event

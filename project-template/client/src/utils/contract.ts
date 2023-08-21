@@ -3,7 +3,10 @@ import Web3 from "web3";
 
 async function getContract() {
   // create web3 provider
-  const provider = new Web3.providers.HttpProvider("http://127.0.0.1:7545");
+  // const provider = new Web3.providers.HttpProvider("http://127.0.0.1:7545");
+  const provider = new Web3.providers.HttpProvider(
+    `https://eth-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_PROJECT_ID}`
+  );
   const web3 = new Web3(provider);
   // interact with smart contract we need two things
   // 1. ABI
